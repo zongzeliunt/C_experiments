@@ -88,3 +88,57 @@ void tree::BST_traversal()
 		}
 	}	
 }
+
+depth_tree_node::depth_tree_node(int v, int d):tree_node(v)
+{
+	//由于父类定义了有参数的构造函数，子类的构造函数必须用这种方式显式调用父类的有参数的构造函数，否则出错。
+	//可以在字类的构造函数里对父类的构造函数进行功能颠覆
+	//在这个程序里这个node类型我用不上
+	depth = d;
+	//val = 25;
+}
+
+depth_tree::depth_tree():tree()
+{
+	total_depth = 0;
+}
+
+void depth_tree::insert(int v)
+{
+	if (root == NULL) {
+		tree_node *node = new tree_node(v);
+		root = node;
+		total_depth = 1;	
+	}
+	else {
+		rec_insert (v, root, 1);
+	}
+}
+
+void depth_tree::rec_insert (int v, tree_node *node, int last_depth)
+{
+	int node_val = node->val;
+	int current_depth = last_depth + 1;
+	if (v <= node_val) {
+		if (node->left == NULL) {
+			tree_node *new_node = new tree_node(v);
+			node->left = new_node;	
+			if (current_depth > total_depth) {
+				total_depth = current_depth;
+			}	
+		} else {
+			rec_insert (v, node->left, current_depth);
+		}
+	} else {
+		if (node->right == NULL) {
+			tree_node *new_node = new tree_node(v);
+			node->right = new_node;		
+			if (current_depth > total_depth) {
+				total_depth = current_depth;
+			}	
+		} else {
+			rec_insert (v, node->right, current_depth);
+		}
+	}
+
+}

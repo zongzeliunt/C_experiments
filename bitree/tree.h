@@ -20,3 +20,17 @@ class tree {
 		void BST_traversal ();
 		tree();
 };
+
+class depth_tree_node: public tree_node  {
+	public:
+		depth_tree_node(int v, int d);
+		int depth;
+};
+
+class depth_tree: public tree {
+	public:
+		int total_depth;
+		void insert (int v);
+		void rec_insert(int v, tree_node *node, int last_depth);
+		depth_tree();
+};
