@@ -1,0 +1,40 @@
+https://blog.csdn.net/blacet/article/details/52397261
+https://blog.csdn.net/gatieme/article/details/51671430
+
+
+编译：
+g++ -g hello_world.cpp
+
+跑GDB：
+gdb a.out
+
+显示代码：
+l
+
+设断点：
+b {行号}
+b {函数名}
+
+查断点：
+info breakpoints
+
+删断点：
+remove {断点名}
+remove {函数名}
+
+开始跑：
+r
+
+下一行：
+n
+
+跑到下一个断点：
+c
+
+查值：
+print c
+
+手动设置值：
+set var a=5
+
+
