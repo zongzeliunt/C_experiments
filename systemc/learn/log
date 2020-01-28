@@ -1,0 +1,14 @@
+https://blog.csdn.net/zm_li_share/article/details/9047219
+
+mkdir /usr/systemc
+
+./configure --prefix=/usr/systemc
+
+make
+make install
+
+export LD_LIBRARY_PATH=/usr/systemc/lib-linux64
+
+用makefile编译
+
+./hello
