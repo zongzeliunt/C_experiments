@@ -1,4 +1,7 @@
 https://blog.csdn.net/zm_li_share/article/details/9047219
+好像有一步是设定CCX为G++，找不到了，暂时先按上面写的步骤跑
+
+
 
 mkdir /usr/systemc
 

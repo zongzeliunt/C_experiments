@@ -1,0 +1,28 @@
+https://blog.csdn.net/MacanS/article/details/78672320
+
+
+网站结果：
+      时间	A	B	F
+       0 s 	0 	0 	1
+     10 ns	0	0	0
+     20 ns 	0 	1 	1
+     30 ns 	1	0 	1
+     40 ns 	1	1 	0
+
+我的结果：
+SystemC 2.3.1-Accellera --- Jan 27 2020 17:23:03
+Copyright (c) 1996-2014 by all Contributors,
+ALL RIGHTS RESERVED
+      Time A B F
+       0 s 0 0 0
+       0 s 0 0 1
+     10 ns 0 1 1
+     20 ns 1 0 1
+     30 ns 1 1 0
+
+
+理解：
+	SC_MODULE是一个类，其中的SC_CTOR就是构造函数，CTOR是constructor
+	SC_CTOR里的SC_THREAD就是线程，要sensitive到clk的。如mon.h
+	SC_CTOR里的SC_METHOD相当于进程，sensitive到信号。如nand2.h
+	SC_CTOR里要是什么都不写，就是组合逻辑，直接连线。如exor2.h
