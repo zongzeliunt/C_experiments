@@ -1,0 +1,37 @@
+http://www.asic-world.com/systemc/first1.html
+
+
+              SystemC 2.0.1 --- Oct  6 2006 19:17:37
+         Copyright (c) 1996-2002 by all Contributors
+                     ALL RIGHTS RESERVED
+ Executing new
+ @0 s Asserting reset
+ 
+ WARNING: Default time step is used for VCD tracing.
+ @10 ns De-Asserting reset
+ 
+ @40 ns Asserting Enable
+ 
+ @41 ns :: Incremented Counter 0
+ @43 ns :: Incremented Counter 1
+ @45 ns :: Incremented Counter 2
+ @47 ns :: Incremented Counter 3
+ @49 ns :: Incremented Counter 4
+ @51 ns :: Incremented Counter 5
+ @53 ns :: Incremented Counter 6
+ @55 ns :: Incremented Counter 7
+ @57 ns :: Incremented Counter 8
+ @59 ns :: Incremented Counter 9
+ @61 ns :: Incremented Counter 10
+ @63 ns :: Incremented Counter 11
+ @65 ns :: Incremented Counter 12
+ @67 ns :: Incremented Counter 13
+ @69 ns :: Incremented Counter 14
+ @71 ns :: Incremented Counter 15
+ @73 ns :: Incremented Counter 0
+ @75 ns :: Incremented Counter 1
+ @77 ns :: Incremented Counter 2
+ @79 ns :: Incremented Counter 3
+ @80 ns De-Asserting Enable
+ 
+ @80 ns Terminating simulation
