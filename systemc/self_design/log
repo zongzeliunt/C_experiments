@@ -1,0 +1,16 @@
+实验笔记：
+SC_THREAD 和 SC_METHOD 的区别在于：
+	SC_THREAD 是线程，sensitive到一个信号，可以插wait()。这个东西执行一次以后，wait()挂起，等下一次的信号来了以后执行上面wait()后面的操作
+	可以理解为，用SC_THREAD挂在clock上生成开局的reset。里面两个wait()，执行完了就在再不执行了。具体例子看reset_gen.h
+	对我来说，时序逻辑clock触发，这个SC_THREAD不好用
+
+	SC_METHOD就是进程，挂在一个信号上，每次信号来了都触发，把里面所有的操作全玩一遍。
+		不能插wait()
+
+	具体区别看stim.h下面的stop_sensor_1 和stop_sensor的区别！
+
+sc_start() 一定要放在main里。
+sc_stop()一定要放在某一个进程或者线程里，我喜欢放在进程（SC_METHOD）里。
+sc_signal 通吃reg和wire
+
+
