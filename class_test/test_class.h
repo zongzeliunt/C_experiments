@@ -22,8 +22,12 @@ class test_base {
 		//这个函数重载只是个例子，以后不能用，因为继承类也不能直接调用基类的数据。
 		int add_data(int data);
 		float add_data(float data);
-
-
+		
+		//虚函数
+		virtual void class_classify ()
+		{
+			cout<<"this is base class"<<endl;
+		}
 };
 
 
@@ -44,6 +48,11 @@ class test_heri:public test_base {
 		int operator+(int data);
 		//函数模板成员
 
+		//重新定义虚函数
+		void class_classify ()
+		{
+			cout<<"this is heri class"<<endl;
+		}
 
 };
 
