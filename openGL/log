@@ -1,0 +1,2 @@
+-lGL 找不到：
+sudo apt install --reinstall libglvnd-dev
