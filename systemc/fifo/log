@@ -1,0 +1,5 @@
+1. verilog中的assign操作，要用SC_THREAD sensitive 到clk，然后里面有个while true来每个cycle都赋值一次
+2. 关于sc_signal类型要不要用write写数据的问题，暂时看来用=等号和用write区别不大，估计sc_method类型如果sensitive到clk默认是用时序逻辑并且使用非阻塞赋值。如果sensitive到别的什么信号则默认阻塞赋值。
+	我测试过dut里面的flap_opt函数和full_opt函数，里面用等号和用write对行为没有太大影响。 
+3. bool类型不存在～符号取反，一定要用if-else
+
