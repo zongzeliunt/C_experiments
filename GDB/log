@@ -19,8 +19,8 @@ b {函数名}
 info breakpoints
 
 删断点：
-remove {断点名}
-remove {函数名}
+delete {断点名}
+delete {函数名}
 
 开始跑：
 r
