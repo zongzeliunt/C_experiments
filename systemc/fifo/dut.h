@@ -101,7 +101,7 @@ SC_MODULE(dut)
 	void full_opt () {
 		while (true) {
 			//full = (write_addr == read_addr && flap == 1) ? 1 : 0;
-			full.write((write_addr == read_addr && flap == 1) ? 1 : 0;
+			full.write((write_addr == read_addr && flap == 1) ? 1 : 0);
 			wait(10, SC_NS);
 		}
 	}
