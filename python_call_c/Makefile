@@ -12,7 +12,7 @@ C_FLAGS += -fPIC -shared
 
 all:
 	#$(CC) -w main.c $(INCLUDES) $(API_PATH)/FILE/FILE_API.c  -o $(OBJ)
-	$(CC) $(C_FLAGS) functions.c $(INCLUDES) -o $(OBJ)
+	$(CC) $(C_FLAGS) functions.c local_lib.c $(INCLUDES) -o $(OBJ)
 
 run:
 	./$(OBJ)

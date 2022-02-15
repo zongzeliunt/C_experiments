@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 #include "DATA_TYPE/DATA_TYPE_DEFINE.h"
+#include "local_lib.h"
+
 
 void hello() 
 {
@@ -8,9 +10,10 @@ void hello()
     printf ("hello ares %x\n", tmp);
 }
 
+
 uint32 cal (uint32 input)
 {
-    return input + 10;
+    return input + tmp_value;
 }
 
 
