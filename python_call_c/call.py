@@ -3,7 +3,8 @@
 #c_char_p
 
 from ctypes import *
-
+from func import *
+    
 
 so_file = "./functions.so"
 my_functions = CDLL(so_file)
@@ -13,11 +14,20 @@ print(my_functions.get_tmp_value())
 
 my_functions.hello()
 
+
+
 print(my_functions.cal(50))
 name = "" * 64
 name = "ares"
 
-s=c_char_p()
-s.value = b"ares"
+show_string_flow(my_functions, name)
 
-my_functions.show_string(s)
+array = [1] * 16
+
+array_change (my_functions, array)
+
+print ("RESULT")
+
+for i in range (0,4):
+    for j in range (0,4):
+        print (str(i) + " " + str(j) + " " + str(array[i * 4 + j]))
