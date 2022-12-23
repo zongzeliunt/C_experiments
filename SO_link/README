@@ -1,0 +1,22 @@
+这个实验实现了三个功能：
+1. compile纯cpp程序变成so文件
+2. 把so文件link到main里面，综合出标准的c的o文件
+3. 直接用main和所有cpp文件综合一个o文件
+4. 用python连接so文件，call so文件里面的function
+
+1. 纯so文件没问题，直接make so_only
+2. 用main.cpp 包括这个so文件，需要加两个东西： -L. -ltest第一个是把lib 指向当前路径，第二个是包括这个叫libtest.so的文件。
+3. 这个办法就是传统的c++编译，所以不能加extern “C”，于是需要加一个加-DPUREC的东西来去掉extern "C"。
+
+
+
+
+4. 这个需要详细讲：
+    1. python能用的只有c类型的函数，所以一切在cpp里声明的需要让python调用的函数，都要加一个extern “C”。
+    2. 可以在.h文件里统一声明加extern "C"的函数。
+        由于class是cpp类型,所以不需要加进extern “C”那个框子里。加进那个框子里的实验我没试过，估计不行。
+    3. 一切的操作必须都是C类型的函数，包括调用class的内联函数。也得在extern “C”的框子里声明一个对应的函数。python里面是不能直接调用class_obj里的内联函数的。
+    4. 但是，需要在python里面声明一个obj，或者说分配地址，这个obj就是一个指针，再把这个指针当function call的参数，去调用这个指针指向的内联函数。
+
+    总的来说，用c++声明class，再用python调class，这属于脱裤子放屁，没有必要，徒增烦恼。这个实验可以留着。
+

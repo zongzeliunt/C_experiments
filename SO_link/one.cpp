@@ -2,5 +2,5 @@
 #include "SoDemoTest.h"
 void one()
 {
-	cout << "call one() function." << endl;
+	std::cout << "call one() function." << std::endl;
 }
